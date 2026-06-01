@@ -25,33 +25,30 @@ html {
 }
 
 .hotspot {
-position: absolute;
-background: transparent !important; /* Forces it to stay clear */
-border: none !important;
-cursor: pointer;
-z-index: 99;
-
-            /* Removes the blue flash on mobile Safari / Chrome */
--webkit-tap-highlight-color: rgba(0,0,0,0) !important;
--webkit-tap-highlight-color: transparent !important;
-            
-            /* Removes the gray outline on desktop clicks */
-outline: none !important;
-box-shadow: none !important;
-
-            /* Prevents the user from accidentally highlighting/selecting the zone */
--webkit-touch-callout: none !important;
-user-select: none !important;
+  position: absolute;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+  z-index: 99;
+  /* Removes the blue flash on mobile Safari / Chrome */
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+  -webkit-tap-highlight-color: transparent !important;
+  /* Removes the gray outline on desktop clicks */
+  outline: none !important;
+  box-shadow: none !important;
+  /* Prevents the user from accidentally highlighting/selecting the zone */
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
 }
 
-        /* Ensures it doesn't show anything when actively pressed or focused */
+/* Ensures it doesn't show anything when actively pressed or focused */
 .hotspot:focus, .hotspot:active, .hotspot:hover {
-            outline: none !important;
-            background: transparent !important;
-            box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
-/* Individual Slides (Now acting as the absolute anchor) */
+/* Individual Slides */
 .slide {
   position: absolute;
   top: 0;
@@ -77,27 +74,23 @@ user-select: none !important;
   position: absolute;
   top: 42%;
   left: 50%;
-  size: 500%;
-  transform: translate(-50%, -50%); /* Perfectly offsets its own width and height */
-  width: 90%; /* Set a fixed pixel size or a percentage */
+  transform: translate(-50%, -50%);
+  width: 90%; /* Fixed: Removed invalid 'size: 500%;' */
 }
 
-/* ========================================== */
 /* THE IMAGE BUTTON STYLING                   */
-/* ========================================== */
 .image-button {
-  position: absolute; /* Pulls it out of flow to layer it on top */
+  position: absolute;
   bottom: 7%;
   left: 8%;
-  width: 84%; /* Keeps the button proportional to the screen */
-  z-index: 99; /* CRITICAL: Forces the button to stay on top of the bg-image */
-  background: none; /* Removes default HTML button background */
-  border: none; /* Removes default HTML button border */
-  padding: 0; /* Removes default padding */
+  width: 84%;
+  z-index: 99;
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
 }
 
-/* Forces the graphic inside the button to fill its container */
 .image-button img {
   width: 100%;
   height: auto;
@@ -117,95 +110,101 @@ user-select: none !important;
 }
 
 .menubar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 5; /* Sits directly on top of the background image */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 5;
 }
+
 .menu-tabs {
-    position: absolute;
-    bottom: 0;         /* Align with the bottom edge */
-    left: 0;
-    width: 100%;
-    height: 12%;       /* Matches the approximate height of your menu bar graphic */
-    display: flex;     /* Activates Flexbox */
-    justify-content: space-around; /* Spaces all 4 buttons completely evenly */
-    align-items: center;           /* Centers them vertically inside the bar */
-    padding: 0 10px;   /* Tiny breathing room on the left/right edges */
-    box-sizing: border-box;
-    z-index: 10;       /* Sits safely ABOVE the menu bar graphic */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  z-index: 10;
 }
+
 .menu-tabs button {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 18%;        /* Controls how big the icons are inside the bar */
-    cursor: pointer;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 18%;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
+
 .menu-tabs button img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
+
 .menu-tabs .face {
-    width: 9%;             /* Size of the Face button */
-    margin-left: 0%;        /* Space before the button */
-    margin-right: 3%;       /* Space between Face and Hair */
+  width: 9%;
+  margin-left: 0%;
+  margin-right: 3%;
 }
 
 .menu-tabs .hair {
-    width: 9%;             /* Size of the Hair button */
-    margin-left: 3%;        /* Extra space before Hair if needed */
-    margin-right: 4%;       /* Space between Hair and Body */
+  width: 9%;
+  margin-left: 3%;
+  margin-right: 4%;
 }
 
 .menu-tabs .body {
-    width: 7%;             /* Size of the Body button */
-    margin-left: 2%;        /* Extra space before Body if needed */
-    margin-right: 3%;       /* Space between Body and Outfit */
+  width: 7%;
+  margin-left: 2%;
+  margin-right: 3%;
 }
 
 .menu-tabs .outfit {
-    width: 12%;             /* Size of the Outfit button */
-    margin-left: 2%;        /* Space between Body and Outfit */
-    margin-right: 0%;       /* Space after the last button */
+  width: 12%;
+  margin-left: 2%;
+  margin-right: 0%;
 }
 
 .submit {
-    position: absolute;
-    top: 4%;
-    right: 5%;
-    width: 12%;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer;
-    z-index: 99999;
+  position: absolute;
+  top: 4%;
+  right: 5%;
+  width: 12%;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  z-index: 99999;
 }
+
 .submit img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .close {
-    position: absolute;
-    top: 4%;
-    left: 5%;
-    width: 12%;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer;
-    z-index: 10;
+  position: absolute;
+  top: 4%;
+  left: 5%;
+  width: 12%;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  z-index: 99999; /* FIXED: Elevated layer prioritization to prevent layout locks */
 }
+
 .close img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 button.face, 
@@ -214,72 +213,64 @@ button.body,
 button.outfit, 
 button.submit,
 button.image-button {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    outline: none !important;
-    box-shadow: none !important;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent !important; /* Removes mobile selection flash */
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
-
-/* CHOICE ROW CONTAINER (FLOATING ABOVE MENU BAR)          */
-
+/* CHOICE ROW CONTAINER (FLOATING ABOVE MENU BAR) */
 .choice-container {
-    position: absolute;
-    bottom: 13%;           /* Sits safely above the menu bar height (adjust if needed) */
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centers the whole row of choices */
-    align-items: center;
-    z-index: 10;
-    box-sizing: border-box;
+  position: absolute;
+  bottom: 13%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  box-sizing: border-box;
 }
 
-/* Master reset for the option buttons */
 .choice-container .choice-btn {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .choice-container .choice-btn img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-
-/* INDIVIDUAL CONTROL FOR EACH CHOICE SIZE & SPACING      */
-
+/* INDIVIDUAL CONTROL FOR EACH CHOICE SIZE & SPACING */
 .choice-container .item-1 {
-    width: 20%;             /* Control size of option 1 */
-    margin-right: 2%;       /* Gap between item 1 and 2 */
+  width: 20%;
+  margin-right: 2%;
 }
 
 .choice-container .item-2 {
-    width: 20%;             /* Control size of option 2 */
-    margin-right: 2%;       /* Gap between item 2 and 3 */
+  width: 20%;
+  margin-right: 2%;
 }
 
 .choice-container .item-3 {
-    width: 20%;             /* Control size of option 3 */
-    margin-right: 2%;       /* Gap between item 3 and 4 */
+  width: 20%;
+  margin-right: 2%;
 }
 
 .choice-container .item-4 {
-    width: 20%;             /* Control size of option 4 */
-    margin-right: 0%;       /* End edge margin */
+  width: 20%;
+  margin-right: 0%;
 }
-
-
-
 
 .person1 {
   position: absolute;
@@ -289,10 +280,23 @@ button.image-button {
   width: 100%;
 }
 
+.slide video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transform: scaleX(-1);
+  background-color: #000;
+}
+
 .person2 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
+  z-index: 5;
 }

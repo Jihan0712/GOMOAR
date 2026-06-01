@@ -573,57 +573,68 @@
     </button>
 </div>
 <!-- camera AR  -->
-        <div class="slide" id="AR-camera-screen-1">
-            <video id="camera-stream" autoplay playsinline muted></video>
-            <img src="assets/08-AR/model-a.png" class="person2" alt="Avatar Character">
+<div class="slide" id="AR-camera-screen-1">
+    <video id="camera-stream" autoplay playsinline muted></video>
+    <img src="assets/08-AR/model-a.png" class="person2" alt="Avatar Character">
 
-            <div class="choice-container">
-                <button class="choice-btn item-1" onclick="navigateTo('AR-camera-screen-1')">
-                    <img src="assets/08-AR/button-A-selected.png" alt="Option 1">
-                </button>
-                <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen-2')">
-                    <img src="assets/08-AR/button-B.png" alt="Option 2">
-                </button>
-                <button class="choice-btn item-3" onclick="navigateTo('AR-camera-screen-3')">
-                    <img src="assets/08-AR/button-C.png" alt="Option 3">
-                </button>
+    <div class="choice-container">
+        <button class="choice-btn item-1" onclick="navigateTo('AR-camera-screen-1')">
+            <img src="assets/08-AR/button-A-selected.png" alt="Option 1">
+        </button>
+        <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen-2')">
+            <img src="assets/08-AR/button-B.png" alt="Option 2">
+        </button>
+        <button class="choice-btn item-3" onclick="navigateTo('AR-camera-screen-3')">
+            <img src="assets/08-AR/button-C.png" alt="Option 3">
+        </button>
+    </div>
 
-            </div>
-        </div>
-<!-- option 1  -->
-        <div class="slide" id="AR-camera-screen-2">
-            <video id="camera-stream" autoplay playsinline muted></video>
-            <img src="assets/08-AR/model-b.png" class="person2" alt="Avatar Character">
+    <button class="close" onclick="navigateTo('screen-start')">
+        <img src="assets/02-Face/close-button.png" alt="Close Button">
+    </button>              
+</div>
 
-            <div class="choice-container">
-                <button class="choice-btn item-1" onclick="navigateTo('AR-camera-screen-1')">
-                    <img src="assets/08-AR/button-A.png" alt="Option 1">
-                </button>
-                <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen-2')">
-                    <img src="assets/08-AR/button-B-selected.png" alt="Option 2">
-                </button>
-                <button class="choice-btn item-3" onclick="navigateTo('AR-camera-screen-3')">
-                    <img src="assets/08-AR/button-C.png" alt="Option 3">
-                </button>
-            </div>
-         </div>
-<!-- option 2  -->
-        <div class="slide" id="AR-camera-screen-3">
-            <video id="camera-stream" autoplay playsinline muted></video>
-            <img src="assets/08-AR/model-c.png" class="person2" alt="Avatar Character">
+<div class="slide" id="AR-camera-screen-2">
+    <video id="camera-stream" autoplay playsinline muted></video>
+    <img src="assets/08-AR/model-b.png" class="person2" alt="Avatar Character">
 
-            <div class="choice-container">
-                 <button class="choice-btn item-1" onclick="navigateTo('AR-camera-screen-1')">
-                    <img src="assets/08-AR/button-A.png" alt="Option 1">
-                </button>
-                <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen-2')">
-                    <img src="assets/08-AR/button-B.png" alt="Option 2">
-                </button>
-                <button class="choice-btn item-3" onclick="navigateTo('AR-camera-screen-3')">
-                    <img src="assets/08-AR/button-C-selected.png" alt="Option 3">
-                </button>
-            </div>
-         </div>
+    <div class="choice-container">
+        <button class="choice-btn item-1" onclick="navigateTo('AR-camera-screen-1')">
+            <img src="assets/08-AR/button-A.png" alt="Option 1">
+        </button>
+        <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen-2')">
+            <img src="assets/08-AR/button-B-selected.png" alt="Option 2">
+        </button>
+        <button class="choice-btn item-3" onclick="navigateTo('AR-camera-screen-3')">
+            <img src="assets/08-AR/button-C.png" alt="Option 3">
+        </button>
+    </div>
+
+    <button class="close" onclick="navigateTo('screen-start')">
+        <img src="assets/02-Face/close-button.png" alt="Close Button">
+    </button>                
+</div>
+        
+<div class="slide" id="AR-camera-screen-3">
+    <video id="camera-stream" autoplay playsinline muted></video>
+    <img src="assets/08-AR/model-c.png" class="person2" alt="Avatar Character">
+
+    <div class="choice-container">
+         <button class="choice-btn item-1" onclick="navigateTo('AR-camera-screen-1')">
+            <img src="assets/08-AR/button-A.png" alt="Option 1">
+        </button>
+        <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen-2')">
+            <img src="assets/08-AR/button-B.png" alt="Option 2">
+        </button>
+        <button class="choice-btn item-3" onclick="navigateTo('AR-camera-screen-3')">
+            <img src="assets/08-AR/button-C-selected.png" alt="Option 3">
+        </button>
+    </div>
+
+    <button class="close" onclick="navigateTo('screen-start')">
+        <img src="assets/02-Face/close-button.png" alt="Close Button">
+    </button>                
+</div>
  </div>
 <script>
 // Track the active camera stream globally

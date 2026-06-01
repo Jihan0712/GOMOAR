@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Demo Prototype</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="phone-container">
+        
+        <div class="slide active" id="screen-start">
+            <img src="assets/01-Start/art.png" class="bg-image" alt="GOMO Start Screen">
+            <img src="assets/01-Start/title.png" class="title" alt="GOMO start text">
+            
+            <button class="image-button" onclick="navigateTo('screen-customizer-1')">
+                <img src="assets/01-Start/start-button.png" alt="Start Now Button">
+            </button>
+        </div>
+        
+<!-- page 1 -->
+        <div class="slide" id="screen-customizer-1">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/02-Face/face-03.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('hair-customizer-1')">
+                    <img src="assets/02-Face/button-1.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('hair-customizer-2')">
+                    <img src="assets/02-Face/button-2.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/02-Face/button-3-selected.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('hair-customizer-3')">
+                    <img src="assets/02-Face/button-4.png" alt="Option 4">
+                </button>
+            </div>          
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/02-Face/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/02-Face/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/02-Face/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/02-Face/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- option 1 -->
+         <div class="slide" id="hair-customizer-1">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/02-Face/face-01.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('hair-customizer-1')">
+                    <img src="assets/02-Face/button-1-selected.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('hair-customizer-2')">
+                    <img src="assets/02-Face/button-2.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/02-Face/button-3.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('hair-customizer-3')">
+                    <img src="assets/02-Face/button-4.png" alt="Option 4">
+                </button>
+            </div>          
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/02-Face/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/02-Face/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/02-Face/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/02-Face/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- option 2 -->
+         <div class="slide" id="hair-customizer-2">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/02-Face/face-02.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('hair-customizer-1')">
+                    <img src="assets/02-Face/button-1.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('hair-customizer-2')">
+                    <img src="assets/02-Face/button-2-selected.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/02-Face/button-3.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('hair-customizer-3')">
+                    <img src="assets/02-Face/button-4.png" alt="Option 4">
+                </button>
+            </div>          
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/02-Face/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/02-Face/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/02-Face/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/02-Face/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- option 4 --> 
+         <div class="slide" id="hair-customizer-3">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/02-Face/face-04.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('hair-customizer-1')">
+                    <img src="assets/02-Face/button-1.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('hair-customizer-2')">
+                    <img src="assets/02-Face/button-2.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/02-Face/button-3.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('hair-customizer-3')">
+                    <img src="assets/02-Face/button-4-selected.png" alt="Option 4">
+                </button>
+            </div>          
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/02-Face/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/02-Face/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/02-Face/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/02-Face/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- page 2 -->
+        <div class="slide" id="screen-customizer-2">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/03-Hair/hair-2-model.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('face-customizer-1')">
+                    <img src="assets/03-Hair/button-1.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/03-Hair/hair-2-selected.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('face-customizer-2')">
+                    <img src="assets/03-Hair/hair-3.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('face-customizer-3')">
+                    <img src="assets/03-Hair/hair-4.png" alt="Option 4">
+                </button>
+            </div> 
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/03-Hair/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/03-Hair/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/03-Hair/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/03-Hair/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- option 1-->
+         <div class="slide" id="face-customizer-1">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/03-Hair/face-01.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('hair-customizer-1')">
+                    <img src="assets/03-Hair/button-1-selected.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/03-Hair/hair-2.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('hair-customizer-1')">
+                    <img src="assets/03-Hair/hair-3.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('hair-customizer-3')">
+                    <img src="assets/03-Hair/hair-4.png" alt="Option 4">
+                </button>
+            </div> 
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/03-Hair/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/03-Hair/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/03-Hair/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/03-Hair/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- option 2-->
+         <div class="slide" id="face-customizer-2">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/03-Hair/hair-3-model.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('face-customizer-1')">
+                    <img src="assets/03-Hair/button-1.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/03-Hair/hair-2.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('face-customizer-2')">
+                    <img src="assets/03-Hair/hair-3-selected.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('face-customizer-3')">
+                    <img src="assets/03-Hair/hair-4.png" alt="Option 4">
+                </button>
+            </div>  
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/03-Hair/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/03-Hair/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/03-Hair/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/03-Hair/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- option 3-->
+         <div class="slide" id="face-customizer-3">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/03-Hair/hair-4-model.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('face-customizer-1')">
+                    <img src="assets/03-Hair/button-1.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/03-Hair/hair-2.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('face-customizer-2')">
+                    <img src="assets/03-Hair/hair-3.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('face-customizer-3')">
+                    <img src="assets/03-Hair/hair-4-selected.png" alt="Option 4">
+                </button>
+            </div>  
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/03-Hair/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/03-Hair/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/03-Hair/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/03-Hair/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- page 3 -->
+        <div class="slide" id="screen-customizer-3">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/04-Body/model-1.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/04-Body/button-1-selected.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('body-customizer-1')">
+                    <img src="assets/04-Body/button-2.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('body-customizer-2')">
+                    <img src="assets/04-Body/button-3.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('body-customizer-3')">
+                    <img src="assets/04-Body/button-4.png" alt="Option 4">
+                </button>
+            </div>
+
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/03-Hair/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/02-Face/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/04-Body/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/04-Body/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- option 1 -->
+         <div class="slide" id="body-customizer-1">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/04-Body/model-2.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/04-Body/button-1.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('body-customizer-1')">
+                    <img src="assets/04-Body/button-2-selected.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('body-customizer-2')">
+                    <img src="assets/04-Body/button-3.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('body-customizer-3')">
+                    <img src="assets/04-Body/button-4.png" alt="Option 4">
+                </button>
+            </div>
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/03-Hair/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/02-Face/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/04-Body/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/04-Body/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- option 2 -->
+         <div class="slide" id="body-customizer-2">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/04-Body/model-3.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/04-Body/button-1.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('body-customizer-1')">
+                    <img src="assets/04-Body/button-2.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('body-customizer-2')">
+                    <img src="assets/04-Body/button-3-selected.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('body-customizer-3')">
+                    <img src="assets/04-Body/button-4.png" alt="Option 4">
+                </button>
+            </div>
+
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/03-Hair/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/02-Face/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/04-Body/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/04-Body/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="Submit Button">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- option 3 -->
+         <div class="slide" id="body-customizer-3">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/04-Body/model-4.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/04-Body/button-1.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('body-customizer-2')">
+                    <img src="assets/04-Body/button-2.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('body-customizer-2')">
+                    <img src="assets/04-Body/button-3.png" alt="Option 3">
+                </button>
+                <button class="choice-btn item-4" onclick="navigateTo('body-customizer-3')">
+                    <img src="assets/04-Body/button-4-selected.png" alt="Option 4">
+                </button>
+            </div>
+
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/03-Hair/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/02-Face/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/04-Body/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/04-Body/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+
+            <button class="submit" onclick="navigateTo('success-screen')">
+                <img src="assets/02-Face/submit-button.png" alt="success-screen">
+            </button>
+            <button class="close" onclick="navigateTo('screen-start')">
+                <img src="assets/02-Face/close-button.png" alt="Close Button">
+            </button>
+        </div>
+<!-- page 4 -->
+        <div class="slide" id="screen-customizer-4">
+            <img src="assets/02-Face/bg.png" class="bg-image" alt="Avatar Customization Screen">
+            <img src="assets/02-Face/face-01.png" class="person1" alt="Avatar Character">
+            <img src="assets/02-Face/menu-bar.png" class="menubar" alt="Menu Bar Background">
+
+            
+            <div class="menu-tabs">
+                <button class="face" onclick="navigateTo('screen-customizer-1')">
+                    <img src="assets/03-Hair/face-button.png" alt="Face Tab">
+                </button>
+                <button class="hair" onclick="navigateTo('screen-customizer-2')">
+                    <img src="assets/02-Face/hair-button.png" alt="Hair Tab">
+                </button>
+                <button class="body" onclick="navigateTo('screen-customizer-3')">
+                    <img src="assets/02-Face/body-button.png" alt="Body Tab">
+                </button>
+                <button class="outfit" onclick="navigateTo('screen-customizer-4')">
+                    <img src="assets/02-Face/outfit-button.png" alt="Outfit Tab">
+                </button>
+            </div>
+        </div>    
+<!-- success-screen  -->
+<div class="slide" id="success-screen">
+    <img src="assets/06-Success/art.png" class="bg-image" alt="Success Screen">
+    
+    <button class="image-button" onclick="navigateTo('passport-screen')" style="position: absolute; bottom: 10%; left: 10%; width: 80%;">
+        <img src="assets/06-Success/check-profile-button.png" alt="Go Home">
+    </button>
+</div>
+<!-- passport  -->
+<div class="slide" id="passport-screen">
+    <img src="assets/07-Passport/art.png" class="bg-image" alt="Success Screen">
+    <img src="assets/07-Passport/Menu Bar.png" class="menubar" alt="Menu Bar Background">
+    <button class="image-button" onclick="navigateTo('AR-camera-screen')" style="position: absolute; bottom: 0%; left: 0%; width: 100%;">
+        <img src="assets/07-Passport/Menu Bar.png" class="menubar" alt="Menu Bar Background">
+    </button>
+</div>
+<!-- camera AR  -->
+ <div class="slide" id="AR-camera-screen">
+    <video id="camera-stream" autoplay playsinline muted></video>
+    
+    <div class="camera-ui-overlay">📷 LIVE PREVIEW</div>
+            <div class="choice-container">
+                <button class="choice-btn item-1" onclick="navigateTo('AR-camera-screen')">
+                    <img src="assets/08-AR/button-A-selected.png" alt="Option 1">
+                </button>
+                <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen')">
+                    <img src="assets/08-AR/button-B.png" alt="Option 2">
+                </button>
+                <button class="choice-btn item-3" onclick="navigateTo('AR-camera-screen')">
+                    <img src="assets/08-AR/button-C.png" alt="Option 3">
+                </button>
+            </div>
+ </div>
+    <script>
+        // Track the active camera stream globally
+        let currentCameraStream = null;
+
+        function navigateTo(targetSlideId) {
+            // 1. SAFELY STOP CAMERA if user navigates away from success screen
+            if (currentCameraStream) {
+                currentCameraStream.getTracks().forEach(track => track.stop());
+                currentCameraStream = null;
+                
+                // Clear video element binding
+                const videoElement = document.getElementById('camera-stream');
+                if (videoElement) {
+                    videoElement.srcObject = null;
+                }
+            }
+
+            // 2. Hide all existing slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // 3. Activate the new targeted slide
+            const targetSlide = document.getElementById(targetSlideId);
+            if (targetSlide) {
+                targetSlide.classList.add('active');
+                
+                // 4. TRIGGER CAMERA if target slide is the success-screen
+                if (targetSlideId === 'success-screen') {
+                    startUserCamera();
+                }
+            }
+        }
+
+// WebRTC camera connection handler
+function startUserCamera() {
+    const video = document.getElementById('camera-stream');
+    
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ 
+            video: { 
+                facingMode: "user", 
+                width: { ideal: 480 },
+                height: { ideal: 800 }
+            },
+            audio: false // Explicitly disable audio to avoid permission/autoplay blocks
+        })
+        .then(function(stream) {
+            currentCameraStream = stream;
+            video.srcObject = stream;
+            
+            // 🔥 FORCE PLAYBACK: Tells the browser to actively start rendering frames
+            video.onloadedmetadata = function(e) {
+                video.play().catch(function(error) {
+                    console.error("Video play broadcast interrupted:", error);
+                });
+            };
+        })
+        .catch(function(error) {
+            console.error("Camera permissions denied or unavailable:", error);
+            alert("Unable to open camera. Please ensure permissions are enabled.");
+        });
+    } else {
+        alert("Your browser environment does not support camera capture streams.");
+    }
+}
+    </script>
+</body>
+</html>

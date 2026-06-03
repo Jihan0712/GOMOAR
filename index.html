@@ -574,7 +574,7 @@
             <img src="assets/08-AR/model-a.png" class="person2" alt="Avatar Character">
 
             <div class="choice-container">
-                <button class="choice-btn item-1" onclick="navigateTo('AR-camera-screen-1')">
+                <button class="choice-btn item-1" onclick="capturePhoto('AR-camera-screen-1')">
                     <img src="assets/08-AR/button-A-selected.png" alt="Option 1">
                 </button>
                 <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen-2')">
@@ -597,7 +597,7 @@
                 <button class="choice-btn item-1" onclick="navigateTo('AR-camera-screen-1')">
                     <img src="assets/08-AR/button-A.png" alt="Option 1">
                 </button>
-                <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen-2')">
+                <button class="choice-btn item-1" onclick="capturePhoto('AR-camera-screen-2')">
                     <img src="assets/08-AR/button-B-selected.png" alt="Option 2">
                 </button>
                 <button class="choice-btn item-3" onclick="navigateTo('AR-camera-screen-3')">
@@ -620,7 +620,7 @@
                 <button class="choice-btn item-2" onclick="navigateTo('AR-camera-screen-2')">
                     <img src="assets/08-AR/button-B.png" alt="Option 2">
                 </button>
-                <button class="choice-btn item-3" onclick="navigateTo('AR-camera-screen-3')">
+                <button class="choice-btn item-3" onclick="capturePhoto('AR-camera-screen-3')">
                      <img src="assets/08-AR/button-C-selected.png" alt="Option 3">
                 </button>
             </div>
@@ -628,13 +628,40 @@
                 <img src="assets/02-Face/close-button.png" alt="Close Button">
             </button>                
         </div>
+        <div class="slide" id="capture-result-screen">
+            <img id="captured-bg" class="bg-image" style="transform: scaleX(-1); object-fit: cover;" alt="Captured Background">
+            <img id="captured-character" class="person2" alt="Captured Character">
+            
+            <div id="camera-flash" style="position: absolute; top:0; left:0; width:100%; height:100%; background:white; opacity:0; pointer-events:none; z-index:999;"></div>
 
+            <button class="close" onclick="navigateTo('AR-camera-screen-1')" style="z-index: 100;">
+                <img src="assets/02-Face/close-button.png" alt="Retake Photo">
+            </button>
+
+            <button class="ig-top-btn" onclick="alert('Photo saved to camera roll!')">
+                ⬇
+            </button>
+
+            <button class="ig-share-btn" onclick="sharePhoto()">
+                Share <span style="margin-left: 5px;">></span>
+            </button>
+        </div>
     </div> <script>
         let currentCameraStream = null;
 
         function navigateTo(targetSlideId) {
             // Cut old camera sessions immediately
             stopCameraStream();
+
+            // 🔥 NEW: If going back to the start screen, reset the AR zoom and drag math!
+            if (targetSlideId === 'screen-start') {
+                currentScale = 1;
+                currentX = 0;
+                currentY = 0;
+                document.querySelectorAll('.person2').forEach(char => {
+                    char.style.setProperty('transform', `translate(-50%, 0px) scale(1)`, 'important');
+                });
+            }
 
             // Hide all slides
             document.querySelectorAll('.slide').forEach(slide => {
@@ -683,6 +710,134 @@
                 }
             }
         }
+
+        function capturePhoto(activeSlideId) {
+            const slide = document.getElementById(activeSlideId);
+            const video = slide.querySelector('video');
+            const character = slide.querySelector('.person2');
+
+            // Safety check: ensure the camera is actually running
+            if (!video || video.readyState !== 4) {
+                console.log("Camera feed not ready yet.");
+                return; 
+            }
+
+            // 1. Trigger a quick visual CSS flash effect
+            const flash = document.getElementById('camera-flash');
+            flash.style.opacity = '1';
+            setTimeout(() => { flash.style.opacity = '0'; }, 150);
+            flash.style.transition = 'opacity 0.5s ease-out';
+
+            // 2. Create a hidden digital canvas to paint the video frame onto
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            
+            // 3. Paint the current live video frame to the canvas
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // 4. Convert the painted canvas into a standard image URL and send it to the preview screen
+            const capturedBg = document.getElementById('captured-bg');
+            capturedBg.src = canvas.toDataURL('image/png');
+
+            // 5. Clone the AR character asset over to the preview screen
+            const capturedCharacter = document.getElementById('captured-character');
+            capturedCharacter.src = character.src;
+
+            // 🔥 NEW: Pass the zoom and drag values to the final photo screen!
+            if (character.style.transform) {
+                capturedCharacter.style.setProperty('transform', character.style.transform, 'important');
+            }
+
+            // 6. Navigate to the preview screen after a tiny delay so the user sees the flash
+            setTimeout(() => {
+                navigateTo('capture-result-screen');
+            }, 200);
+        }
+        function sharePhoto() {
+            // Checks if the device supports the native mobile share sheet (iOS/Android)
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My GOMO Avatar',
+                    text: 'Check out my GOMO UNSTPPBL Avatar!',
+                    url: window.location.href 
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                }).catch(console.error);
+            } else {
+                // Fallback for desktop browsers testing the prototype
+                alert("Share dialog opened! (The native share sheet will slide up when tested on a real mobile device.)");
+            }
+        }
+        // ==========================================
+        // AR PINCH & DRAG ENGINE
+        // ==========================================
+        let currentScale = 1;
+        let currentX = 0;
+        let currentY = 0;
+        let initialDistance = 0;
+        let initialX = 0;
+        let initialY = 0;
+        let isDragging = false;
+
+        // Listen for touches on the whole phone area
+        document.querySelector('.phone-container').addEventListener('touchstart', (e) => {
+            const activeSlide = document.querySelector('.slide.active');
+            if (!activeSlide || !activeSlide.id.startsWith('AR-camera-screen')) return;
+            
+            // Ignore touches if the user is tapping a UI button instead
+            if (e.target.closest('button') || e.target.closest('.choice-container')) return;
+
+            const character = activeSlide.querySelector('.person2');
+            if (!character) return;
+
+            if (e.touches.length === 1) {
+                isDragging = true;
+                initialX = e.touches[0].clientX - currentX;
+                initialY = e.touches[0].clientY - currentY;
+            } else if (e.touches.length === 2) {
+                isDragging = false;
+                initialDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+            }
+        });
+
+        document.querySelector('.phone-container').addEventListener('touchmove', (e) => {
+            const activeSlide = document.querySelector('.slide.active');
+            if (!activeSlide || !activeSlide.id.startsWith('AR-camera-screen')) return;
+            if (e.target.closest('button') || e.target.closest('.choice-container')) return;
+
+            const character = activeSlide.querySelector('.person2');
+            if (!character) return;
+
+            e.preventDefault(); // Prevents iOS rubber-banding
+
+            if (e.touches.length === 1 && isDragging) {
+                // Moving 1 finger
+                currentX = e.touches[0].clientX - initialX;
+                currentY = e.touches[0].clientY - initialY;
+            } else if (e.touches.length === 2) {
+                // Pinching 2 fingers
+                const currentDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+                const scaleChange = currentDistance / initialDistance;
+                currentScale = Math.max(0.4, Math.min(currentScale * scaleChange, 3.5)); // Limits zoom to min 40%, max 350%
+                initialDistance = currentDistance;
+            }
+
+            // Apply the live math directly to the image
+            character.style.setProperty('transform', `translate(calc(-50% + ${currentX}px), ${currentY}px) scale(${currentScale})`, 'important');
+        }, { passive: false });
+
+        document.querySelector('.phone-container').addEventListener('touchend', (e) => {
+            if (e.touches.length < 2) initialDistance = 0;
+            if (e.touches.length === 0) isDragging = false;
+        });
 
         window.addEventListener('beforeunload', stopCameraStream);
         window.addEventListener('pagehide', stopCameraStream);

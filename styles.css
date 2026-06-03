@@ -246,23 +246,11 @@ button.image-button,
   background-color: #000;
 }
 
-.person2 {
-    position: absolute !important;
-    top: auto !important;
-    bottom: 5% !important;        /* Anchors the feet near the buttons */
-    left: 0 !important;
-    width: 100% !important;
-    height: 80% !important;       /* Restricts height so the head doesn't clip the top */
-    object-fit: contain !important; /* STOPS the zooming/cropping */
-    object-position: bottom center !important; 
-    transform: none !important;
-    z-index: 5 !important;
-    pointer-events: none !important;
-  }
 
-/* ======================================================= */
+
+
 /* UNIVERSAL IOS & MOBILE BROWSER FLUID RESPONSIVE FIXES   */
-/* ======================================================= */
+
 @media (max-width: 480px) {
   body, html {
     position: fixed;
@@ -305,3 +293,60 @@ button.image-button,
     bottom: 15% !important;
   }
 }
+
+
+
+/* IG-STYLE PREVIEW SCREEN UI                              */
+
+.ig-share-btn {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    background: #ffffff;
+    color: #000000;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.ig-top-btn {
+    position: absolute;
+    top: 4%;
+    right: 5%;
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.person2 {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 5% !important;        
+    left: 50% !important;         /* Centered by default */
+    width: 100% !important;
+    height: 80% !important;       
+    object-fit: contain !important; 
+    object-position: bottom center !important; 
+    transform: translate(-50%, 0px) scale(1) !important; /* 🔥 Base math for JS to hook into */
+    z-index: 5 !important;
+    pointer-events: auto !important; /* 🔥 CRITICAL: Allows finger touches */
+    touch-action: none !important;   /* 🔥 Stops iPhone from bouncing when swiping */
+  }

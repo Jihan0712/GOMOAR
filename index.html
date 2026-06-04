@@ -564,12 +564,12 @@
         <div class="slide" id="passport-screen">
             <img src="assets/07-Passport/art.png" class="bg-image" alt="Passport Screen">
             
-            <button class="image-button" onclick="navigateTo('AR-camera-tracking-screen')">
+            <button class="image-button" onclick="navigateTo('AR-camera-screen-0')">
                 <img src="assets/07-Passport/Menu Bar.png" class="menubar" alt="Menu Bar Background">
             </button>
         </div>
 
-        <div class="slide" id="AR-camera-tracking-screen">
+        <div class="slide" id="AR-camera-screen-0">
             <video autoplay playsinline muted></video>
             <img src="assets/08-AR/tracker-AR.png" class="tracking" alt="Avatar Character">
 
@@ -693,7 +693,7 @@
                 targetSlide.classList.add('active');
                 
                 // Trigger camera immediately within click execution loop for iOS support
-                if (targetSlideId.startsWith('AR-camera-tracking-screen')) {
+                if (targetSlideId.startsWith('AR-camera-screen')) {
                     startUserCamera(targetSlide); 
                 }
             }
